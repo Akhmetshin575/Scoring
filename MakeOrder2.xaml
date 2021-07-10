@@ -1,0 +1,1290 @@
+﻿<Page x:Class="Scoring3.MakeOrder2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Scoring3"
+      mc:Ignorable="d" 
+      d:DesignHeight="1630" d:DesignWidth="1536"
+      Title="MakeOrder2"
+      Background="White">
+
+    <ScrollViewer x:Name="scroll" VerticalScrollBarVisibility="Visible">
+        <Grid ShowGridLines="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="320"></RowDefinition>
+                <RowDefinition Height="330"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="auto"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3">
+                <WrapPanel
+                    HorizontalAlignment="Center">
+                    <GroupBox Header="Сведения об автомобиле:"
+                              HorizontalAlignment="Stretch"
+                              Margin="10 10 10 0"
+                              FontWeight="Bold"
+                              FontSize="16"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              Width="1500"
+                          >
+                        <WrapPanel Name="car">
+                            <TextBlock x:Name="textBlockCity"
+                                   Margin="0 10 10 0"
+                                   Text="Город:"></TextBlock>
+                            <ComboBox Name="comboBoxCity"
+                                      Margin="0 10 0 0"
+                                      Width="200"></ComboBox>
+                            
+                            <TextBlock x:Name="textBlockDealer"
+                                   Margin="20 10 10 0"
+                                   Text="Продавец:"></TextBlock>
+                            <ComboBox Name="comboBoxDealer"
+                                      Margin="0 10 0 0"
+                                      Width="600" MouseEnter="ComboBoxDealer_MouseEnter"></ComboBox>
+
+                            <TextBlock x:Name="textBlockBankDetails"
+                                   Margin="20 10 10 0"
+                                   Text="Расч. счет:"></TextBlock>
+                            <ComboBox Name="comboBankDetails"
+                                      Margin="0 10 0 0"
+                                      Width="380" MouseEnter="ComboBankDetails_MouseEnter"></ComboBox>
+
+                            <TextBlock x:Name="textBlockBrand"
+                                   Margin="0 20 10 0"
+                                   Text="Производитель:"></TextBlock>
+                            <ComboBox Name="comboBoxBrand"
+                                      Margin="0 20 0 0"
+                                      Width="250"></ComboBox>
+
+                            <TextBlock x:Name="textBlockModel"
+                                   Margin="40 20 10 0"
+                                   Text="Модель:"></TextBlock>
+                            <ComboBox Name="comboBoxModel"
+                                      Margin="0 20 0 0"
+                                      Width="250" MouseEnter="ComboBoxModel_MouseEnter"></ComboBox>
+
+                            <TextBlock x:Name="textBlockYear"
+                                   Margin="40 20 10 0"
+                                   Text="Год выпуска:"></TextBlock>
+                            <TextBox x:Name="textBoxYear"
+                                     Margin="0 20 0 0"
+                                     Width="100" LostFocus="TextBoxYear_LostFocus"></TextBox>
+                            
+
+                            <TextBlock x:Name="textBlockNew"
+                                   Margin="40 20 10 0"
+                                   Text="Автомобиль новый?:"></TextBlock>
+                            <RadioButton x:Name="radioButtonNewCar"
+                             GroupName="Car"
+                             Content="Да"
+                             HorizontalAlignment="Left"
+                             Margin="10,25,0,0"
+                             VerticalAlignment="Top"
+                             FontSize="14"
+                             FontWeight="Bold"/>
+                            <RadioButton x:Name="radioButtonUsedCar"
+                            GroupName="Car"
+                            Content="Нет"
+                            HorizontalAlignment="Left"
+                            Margin="10,25,0,0"
+                            VerticalAlignment="Top"
+                            FontSize="14"
+                            FontWeight="Bold"/>
+                            <TextBlock Width="100" Height="0"></TextBlock>
+
+                            
+                            <TextBlock x:Name="textBlockDocumentType"
+                                   Margin="0 15 15 0"
+                                   Text="Тип документа:"></TextBlock>
+                            <ComboBox Name="comboBoxDocumentType"
+                                      Margin="0 15 0 0"
+                                      Width="210"></ComboBox>
+
+                            <TextBlock x:Name="textBlockSeries"
+                                   Margin="30 20 10 0"
+                                   Text="Серия:"></TextBlock>
+                            <TextBox x:Name="textBoxSeries"
+                                     Margin="0 20 0 0"
+                                     Width="100" LostFocus="TextBoxSeries_LostFocus"></TextBox>
+
+                            <TextBlock x:Name="textBlockDocumentNumber"
+                                   Margin="17 20 10 0"
+                                   Text="Номер:"></TextBlock>
+                            <TextBox x:Name="textBoxDocumentNumber"
+                                     Margin="0 20 0 0"
+                                     Width="150" LostFocus="TextBoxDocumentNumber_LostFocus"></TextBox>
+
+                            <TextBlock x:Name="textBlockDocumentDate"
+                                   Margin="17 20 10 0"
+                                   Text="Дата выдачи:"></TextBlock>
+                            <TextBox x:Name="textBoxDocumentDate"
+                                     Margin="0 20 0 0"
+                                     Width="100" LostFocus="TextBoxDocumentDate_LostFocus"></TextBox>
+
+                            <TextBlock x:Name="textBlockNameFromDocument"
+                                   Margin="17 20 10 0"
+                                   Text="Название по ПТС:"></TextBlock>
+                            <TextBox x:Name="textBoxNameFromDocument"
+                                     Margin="0 20 0 0"
+                                     Width="300"></TextBox>
+
+                            <TextBlock x:Name="textBlockVIN"
+                                   Margin="0 20 10 0"
+                                   Text="VIN-номер:"></TextBlock>
+                            <TextBox x:Name="textBoxVIN"
+                                     Margin="0 20 0 0"
+                                     Width="360" LostFocus="TextBoxVIN_LostFocus"></TextBox>
+                            
+                            <TextBlock x:Name="textBlockBody"
+                                   Margin="50 20 10 0"
+                                   Text="Номер кузова:"></TextBlock>
+                            <TextBox x:Name="textBoxBody"
+                                     Margin="0 20 0 0"
+                                     Width="360"></TextBox>
+
+                            <Button Name="copy"
+                                    HorizontalAlignment="Left"
+                                    FontWeight="Bold"
+                                    FontSize="18"
+                                    VerticalAlignment="Center"
+                                    Height="30"
+                                    Width="30"
+                                    Margin="10 10 0 -10" Click="Copy_Click">
+                                <StackPanel>
+                                    <Image Source="C:\Users\XtremeStation\Desktop\Diplom\Scoring\copy.png"
+                                       Width="20"
+                                       Height="20" Stretch="Fill"></Image>
+                                </StackPanel>
+                            </Button>
+
+                            <TextBlock x:Name="textBlockUVEOS"
+                                   Margin="20 20 10 0"
+                                   Text="УВЭОС:"></TextBlock>
+                            <TextBox x:Name="textBoxUVEOS"
+                                     Margin="0 20 0 0"
+                                     Width="350"></TextBox>
+
+                            <TextBlock x:Name="textBlockEngine"
+                                   Margin="0 20 10 0"
+                                   Text="№ двигателя:"></TextBlock>
+                            <TextBox x:Name="textBoxEngine"
+                                     Margin="0 20 0 0"
+                                     Width="170"></TextBox>
+
+                            <TextBlock x:Name="textBlockEngineType"
+                                   Margin="25 20 10 0"
+                                   Text="Тип двигателя:"></TextBlock>
+                            <ComboBox Name="comboBoxEngineType"
+                                      Margin="0 20 0 0"
+                                      Width="150"></ComboBox>
+
+                            <TextBlock x:Name="textBlockEcologicalClass"
+                                   Margin="25 20 10 0"
+                                   Text="Экологический класс:"></TextBlock>
+                            <ComboBox Name="comboBoxEcologicalClass"
+                                      Margin="0 20 0 0"
+                                      Width="100"></ComboBox>
+
+                            <TextBlock x:Name="textBlockEnginePower"
+                                   Margin="25 20 10 0"
+                                   Text="Мощность (кВт):"></TextBlock>
+                            <TextBox x:Name="textBoxEnginePower"
+                                     Margin="0 20 0 0"
+                                     Width="110"></TextBox>
+
+                            <TextBlock x:Name="textBlockMass"
+                                   Margin="25 20 10 0"
+                                   Text="Разрешённая масса:"></TextBlock>
+                            <TextBox x:Name="textBoxMass"
+                                     Margin="0 20 0 0"
+                                     Width="110" LostFocus="TextBoxMass_LostFocus"></TextBox>
+
+                            <TextBlock x:Name="textBlockColor"
+                                   Margin="0 20 10 0"
+                                   Text="Цвет:"></TextBlock>
+                            <TextBox x:Name="textBoxColor"
+                                     Margin="0 20 0 10"
+                                     Width="200"></TextBox>
+
+                            <TextBlock x:Name="textBlockPrice"
+                                   Margin="25 20 10 0"
+                                   Text="Стоимость автомобиля:"></TextBlock>
+                            <TextBox x:Name="textBoxPrice"
+                                     Margin="0 20 0 10"
+                                     Width="150"></TextBox>
+
+                            <TextBlock x:Name="textBlockDocumentForCredit"
+                                   Margin="25 20 10 0"
+                                   Text="Основание продажи:"></TextBlock>
+                            <ComboBox Name="comboBoxDocumentForCredit"
+                                      Margin="0 20 0 10"
+                                      Width="142"></ComboBox>
+
+                            <TextBlock x:Name="textBlockDocumentForCreditNumber"
+                                   Margin="25 20 10 10"
+                                   Text="№ документа"></TextBlock>
+                            <TextBox x:Name="textBoxDocumentForCreditNumber"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                            <TextBlock x:Name="textBlockDocumentForCreditDate"
+                                   Margin="25 20 10 10"
+                                   Text="Дата документа"></TextBlock>
+                            <TextBox x:Name="textBoxDocumentForCreditDate"
+                                     Margin="0 20 0 10"
+                                     Width="100" GotFocus="TextBoxDocumentForCreditDate_GotFocus" LostFocus="TextBoxDocumentForCreditDate_LostFocus"></TextBox>
+
+
+                        </WrapPanel>
+                    </GroupBox>
+                </WrapPanel>
+            </Grid>
+
+
+            <Grid x:Name="financialBlock"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3">
+                <WrapPanel
+                    HorizontalAlignment="Center">
+                    <GroupBox Header="Выбор тарифа и услуг:"
+                              HorizontalAlignment="Stretch"
+                              Margin="10 10 10 0"
+                              FontWeight="Bold"
+                              FontSize="16"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              Width="1500">
+                        <WrapPanel Name="services">
+                            <TextBlock x:Name="textBlockPeriod"
+                                   Margin="0 10 10 10"
+                                   Text="Срок кредита:"></TextBlock>
+                            <ComboBox Name="comboBoxPeriod"
+                                      Margin="0 10 0 10"
+                                      Width="50"></ComboBox>
+
+                            <TextBlock x:Name="textBlockInitialPayment"
+                                   Margin="25 10 10 10"
+                                   Text="Первоначальный взнос:"></TextBlock>
+                            <TextBox x:Name="textBoxInitialPayment"
+                                     Margin="0 10 0 10"
+                                     Width="164"></TextBox>
+
+                            <TextBlock x:Name="textBlockTariff"
+                                   Margin="25 10 10 10"
+                                   Text="Тариф:"></TextBlock>
+                            <ComboBox Name="comboBoxTariff"
+                                      Margin="0 10 0 10"
+                                      Width="830" MouseEnter="ComboBoxTariff_MouseEnter"></ComboBox>
+
+                            <TextBlock x:Name="textBlockSMS"
+                                   Margin="0 20 10 10"
+                                   Text="СМС-информирование:"></TextBlock>
+                            <RadioButton x:Name="radioButtonSMS_On"
+                                         GroupName="SMS"
+                                         Content="Подключить"
+                                         HorizontalAlignment="Left"
+                                         Margin="10,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Bold"/>
+                            <RadioButton x:Name="radioButtonSMS_Off"
+                                         GroupName="SMS"
+                                         Content="Не подключать"
+                                         HorizontalAlignment="Left"
+                                         Margin="10,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Bold"/>
+                            <TextBlock x:Name="textBlockSMS_Price"
+                                   Margin="40 20 10 10"
+                                   Text="(Сумма в кредит: )"
+                                       Width="950"></TextBlock>
+
+                            <TextBlock x:Name="textBlockPBU"
+                                   Margin="0 10 10 10"
+                                   Text="Пакет банковских услуг:"></TextBlock>
+                            <RadioButton x:Name="radioButtonPBU_On"
+                                         GroupName="PBU"
+                                         Content="Подключить"
+                                         HorizontalAlignment="Left"
+                                         Margin="10,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Bold"/>
+                            <RadioButton x:Name="radioButtonPBU_Off"
+                                         GroupName="PBU"
+                                         Content="Не подключать"
+                                         HorizontalAlignment="Left"
+                                         Margin="10,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Bold"/>
+                            <TextBlock x:Name="textBlockPBU_Price"
+                                   Margin="40 10 10 10"
+                                   Text="(Сумма в кредит: бесплатно)"
+                                       Width="950"></TextBlock>
+                            
+                            <WrapPanel x:Name="wpADVANCE">
+                                <TextBlock x:Name="textBlockAdvance"
+                                   Margin="0 10 10 10"
+                                   Text="АДВАНС:"></TextBlock>
+                                <TextBlock x:Name="textBlockAdvancePrice"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:"></TextBlock>
+                                <TextBox x:Name="textBoxAdvancePrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockAdvancePartner"
+                                       Margin="15 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Поставщик:"></TextBlock>
+                                <ComboBox Name="comboBoxAdvancePartner"
+                                      Margin="0 10 0 10"
+                                      Width="570" MouseEnter="ComboBoxAdvancePartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockAdvanceInvoiceNumber"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="№ счета:"></TextBlock>
+                                <TextBox x:Name="textBoxAdvanceInvoiceNumber"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockInvoiceDate"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата счета:"></TextBlock>
+                                <TextBox x:Name="textBoxInvoiceDate"
+                                     Margin="0 10 0 10"
+                                     Width="100" GotFocus="TextBoxInvoiceDate_GotFocus" LostFocus="TextBoxInvoiceDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit1"
+                                       Margin="10 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit1_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+                            </WrapPanel>
+                                    
+                            <WrapPanel x:Name="wpRING">
+                                <TextBlock x:Name="textBlockRING"
+                                   Margin="0 10 35 10"
+                                   Text="РИНГ:"></TextBlock>
+                                <TextBlock x:Name="textBlockRingPrice"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:"></TextBlock>
+                                <TextBox x:Name="textBoxRingPrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockRingPartner"
+                                       Margin="15 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Поставщик:"></TextBlock>
+                                <ComboBox Name="comboBoxRingPartner"
+                                      Margin="0 10 0 10"
+                                      Width="570" MouseEnter="ComboBoxRingPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockRingInvoiceNumber"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="№ счета:"></TextBlock>
+                                <TextBox x:Name="textBoxRingInvoiceNumber"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockRingInvoiceDate"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата счета:"></TextBlock>
+                                <TextBox x:Name="textBoxRingInvoiceDate"
+                                     Margin="0 10 0 10"
+                                     Width="100" GotFocus="TextBoxRingInvoiceDate_GotFocus" LostFocus="TextBoxRingInvoiceDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit2"
+                                       Margin="10 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit2_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+                            </WrapPanel>
+
+                            <WrapPanel x:Name="wpRAT">
+                                <TextBlock x:Name="textBlockRAT"
+                                   Margin="0 10 50 10"
+                                   Text="РАТ:"></TextBlock>
+                                <TextBlock x:Name="textBlockRATPrice"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:"></TextBlock>
+                                <TextBox x:Name="textBoxRATPrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockRATPartner"
+                                       Margin="15 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Поставщик:"></TextBlock>
+                                <ComboBox Name="comboBoxRATPartner"
+                                      Margin="0 10 0 10"
+                                      Width="570" MouseEnter="ComboBoxRATPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockRATInvoiceNumber"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="№ счета:"></TextBlock>
+                                <TextBox x:Name="textBoxRATInvoiceNumber"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockRATInvoiceDate"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата счета:"></TextBlock>
+                                <TextBox x:Name="textBoxRATInvoiceDate"
+                                     Margin="0 10 0 10"
+                                     Width="100" GotFocus="TextBoxRATInvoiceDate_GotFocus" LostFocus="TextBoxRATInvoiceDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit3"
+                                       Margin="10 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit3_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+                            </WrapPanel>
+                        </WrapPanel>
+                    </GroupBox>
+                </WrapPanel>
+            </Grid>
+
+
+
+            <Grid x:Name="insuranceBlock"
+                  Grid.Row="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3">
+                <WrapPanel
+                    HorizontalAlignment="Center">
+                    <GroupBox Header="Выбор страховок:"
+                              HorizontalAlignment="Stretch"
+                              Margin="10 10 10 0"
+                              FontWeight="Bold"
+                              FontSize="16"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              Width="1500">
+                        <StackPanel x:Name="insurances"
+                                    Orientation="Vertical">
+                            
+                            <WrapPanel Name="wpKASKO">
+                                <TextBlock x:Name="textBlockKASKO"
+                                   Margin="0 10 10 10"
+                                   Text="КАСКО:"></TextBlock>
+                                <TextBlock x:Name="textBlockKASKOSum"
+                                           Width="135"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOSum"
+                                     Margin="0 10 0 10"
+                                     Width="100" GotFocus="TextBoxKASKOSum_GotFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockKASKOPrice"
+                                           Width="115"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOPrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_KASKO"
+                                       Margin="20 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_KASKO_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockKASKOPartner"
+                                       Margin="20 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxKASKOPartner"
+                                      Margin="0 10 0 10"
+                                      Width="664" MouseEnter="ComboBoxKASKOPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockKASKOPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockKASKOPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockKASKORegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxKASKORegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxKASKORegistartionDate_GotFocus" LostFocus="TextBoxKASKORegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockKASKOStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxKASKOStartDat_GotFocus" LostFocus="TextBoxKASKOStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockKASKOPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxKASKOPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxKASKOPeriod_GotFocus" LostFocus="TextBoxKASKOPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+
+                            <WrapPanel Name="wpGAP">
+                                <TextBlock x:Name="textBlockGAP"
+                                   Margin="0 20 30 10"
+                                   Text="GAP:"></TextBlock>
+                                <TextBlock x:Name="textBlockGAPSum"
+                                           Width="135"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxGAPSum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockGAPPrice"
+                                           Width="115"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:"></TextBlock>
+                                <TextBox x:Name="textBoxGAPPrice"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_GAP"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_GAP_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockGAPPartner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxGAPPartner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxGAPPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockGAPPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxGAPPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockGAPPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxGAPPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockGAPRegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxGAPRegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxGAPRegistartionDate_GotFocus" LostFocus="TextBoxGAPRegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockGAPStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxGAPStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxGAPStartDat_GotFocus" LostFocus="TextBoxGAPStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockGAPPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxGAPPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxGAPPeriod_LostFocus"/>
+                            </WrapPanel>
+
+
+                            <WrapPanel Name="wpLife2">
+                                <TextBlock x:Name="textBlockLife2"
+                                   Margin="0 20 10 10"
+                                   Text="СЖ_2:" Width="57"></TextBlock>
+                                <TextBlock x:Name="textBlockLife2Sum"
+                                           Width="135"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"/>
+                                <TextBox x:Name="textBoxLife2Sum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife2Price"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxLife2Price"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_Life2"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_Life2_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockLife2Partner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxLife2Partner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxLife2Partner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockLife2PolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxLife2PolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife2PolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxLife2PolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife2RegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxLife2RegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxLife2RegistartionDate_GotFocus" LostFocus="TextBoxLife2RegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife2StartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxLife2StartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxLife2StartDat_GotFocus" LostFocus="TextBoxLife2StartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife2Period"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxLife2Period"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxLife2Period_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpLife3">
+                                <TextBlock x:Name="textBlockLife3"
+                                   Margin="0 20 10 10"
+                                   Text="СЖ_3:" Width="56"></TextBlock>
+                                <TextBlock x:Name="textBlockLife3Sum"
+                                           Width="135"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxLife3Sum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife3Price"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxLife3Price"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_Life3"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_Life3_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockLife3Partner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxLife3Partner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxLife3Partner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockLife3PolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxLife3PolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife3PolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxLife3PolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife3RegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxLife3RegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxLife3RegistartionDate_GotFocus" LostFocus="TextBoxLife3RegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife3StartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxLife3StartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxLife3StartDat_GotFocus" LostFocus="TextBoxLife3StartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockLife3Period"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxLife3Period"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxLife3Period_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpCorona">
+                                <TextBlock x:Name="textBlockCorona"
+                                   Margin="0 20 10 10"
+                                   Text="COVID:" Width="57"></TextBlock>
+                                <TextBlock x:Name="textBlockCoronaSum"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaSum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockCoronaPrice"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaPrice"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_Corona"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_Corona_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockCoronaPartner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxCoronaPartner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxCoronaPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockCoronaPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockCoronaPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockCoronaRegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaRegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxCoronaRegistartionDate_GotFocus" LostFocus="TextBoxCoronaRegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockCoronaStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxCoronaStartDat_GotFocus" LostFocus="TextBoxCoronaStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockCoronaPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxCoronaPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxCoronaPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpOSAGO">
+                                <TextBlock x:Name="textBlockOSAGO"
+                                   Margin="0 20 10 10"
+                                   Text="ОСАГО:"></TextBlock>
+                                <TextBlock x:Name="textBlockOSAGOSum"
+                                           Width="135"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOSum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockOSAGOPrice"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOPrice"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_OSAGO"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_OSAGO_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockOSAGOPartner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxOSAGOPartner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxOSAGOPartner_MouseEnter"/>
+
+                                <TextBlock x:Name="textBlockOSAGOaPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockOSAGOPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockOSAGORegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGORegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxOSAGORegistartionDate_GotFocus" LostFocus="TextBoxOSAGORegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockOSAGOStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxOSAGOStartDat_GotFocus" LostFocus="TextBoxOSAGOStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockOSAGOaPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxOSAGOPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxOSAGOPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpDSAGO">
+                                <TextBlock x:Name="textBlockDSAGO"
+                                   Margin="0 20 10 10"
+                                   Text="ДСАГО:"></TextBlock>
+                                <TextBlock x:Name="textBlockDSAGOSum"
+                                           Width="135"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOSum"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockDSAGOPrice"
+                                       Margin="10 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOPrice"
+                                     Margin="0 20 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_DSAGO"
+                                       Margin="20 20 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_DSAGO_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,25,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockDSAGOPartner"
+                                       Margin="20 20 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxDSAGOPartner"
+                                      Margin="0 20 0 10"
+                                      Width="664" MouseEnter="ComboBoxDSAGOPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockDSAGOaPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockDSAGOPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockDSAGORegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGORegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxDSAGORegistartionDate_GotFocus" LostFocus="TextBoxDSAGORegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockDSAGOStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxDSAGOStartDat_GotFocus" LostFocus="TextBoxDSAGOStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockDSAGOaPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxDSAGOPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxDSAGOPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpExtendedWarranty">
+                                <TextBlock x:Name="textBlockExtendedWarranty"
+                                   Margin="0 20 10 0"
+                                   Text="Продлённая гарантия:" Width="1452"></TextBlock>
+                                <TextBlock x:Name="textBlockExtendedWarrantySum"
+                                       Margin="78 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantySum"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyPrice"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyPrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_ExtendedWarranty"
+                                       Margin="20 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_ExtendedWarranty_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyPartner"
+                                       Margin="20 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxExtendedWarrantyPartner"
+                                      Margin="0 10 0 10"
+                                      Width="664" MouseEnter="ComboBoxExtendedWarrantyPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyRegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyRegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxExtendedWarrantyRegistartionDate_GotFocus" LostFocus="TextBoxExtendedWarrantyRegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxExtendedWarrantyStartDat_GotFocus" LostFocus="TextBoxExtendedWarrantyStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockExtendedWarrantyPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxExtendedWarrantyPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxExtendedWarrantyPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                            <WrapPanel Name="wpProtectionItems">
+                                <TextBlock x:Name="textBlockProtectionItems"
+                                   Margin="0 20 10 10"
+                                   Text="Защита личных вещей:" Width="1457"></TextBlock>
+                                <TextBlock x:Name="textBlockProtectionItemsSum"
+                                           Width="135"
+                                       Margin="78 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховая сумма:"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsSum"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsPrice"
+                                       Margin="10 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Стоимость:" Width="115"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsPrice"
+                                     Margin="0 10 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockToCredit_ProtectionItems"
+                                       Margin="20 10 10 10"
+                                       FontWeight="Medium"
+                                       Text="В кредит?:"></TextBlock>
+                                <CheckBox x:Name="radioButtonToCredit_ProtectionItems_Yes"
+                                         HorizontalAlignment="Left"
+                                         Margin="0,15,0,0"
+                                         VerticalAlignment="Top"
+                                         FontSize="14"
+                                         FontWeight="Medium"/>
+
+                                <TextBlock x:Name="textBlockProtectionItemsPartner"
+                                       Margin="20 10 5 10"
+                                       FontWeight="Medium"
+                                       Text="Страховщик:"></TextBlock>
+                                <ComboBox Name="comboBoxProtectionItemsPartner"
+                                      Margin="0 10 0 10"
+                                      Width="664" MouseEnter="ComboBoxProtectionItemsPartner_MouseEnter"></ComboBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsPolicySeries"
+                                       Margin="78 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Серия полиса:" Width="135"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsPolicySeries"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsPolicyNumber"
+                                           Width="115"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Номер полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsPolicyNumber"
+                                     Margin="0 0 0 10"
+                                     Width="100"></TextBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsRegistartionDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата оформления полиса:"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsRegistartionDate"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxProtectionItemsRegistartionDate_GotFocus" LostFocus="TextBoxProtectionItemsRegistartionDate_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsStartDate"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Дата начала действия:"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsStartDat"
+                                     Margin="0 0 0 10"
+                                     Width="100" GotFocus="TextBoxProtectionItemsStartDat_GotFocus" LostFocus="TextBoxProtectionItemsStartDat_LostFocus"></TextBox>
+
+                                <TextBlock x:Name="textBlockProtectionItemsPeriod"
+                                       Margin="10 0 5 10"
+                                       FontWeight="Medium"
+                                       Text="Срок (мес.):"></TextBlock>
+                                <TextBox x:Name="textBoxProtectionItemsPeriod"
+                                     Margin="0 0 0 10"
+                                     Width="100" LostFocus="TextBoxProtectionItemsPeriod_LostFocus"></TextBox>
+                            </WrapPanel>
+
+                        </StackPanel>
+                    </GroupBox>
+                </WrapPanel>
+            </Grid>
+
+
+            <Button x:Name="ToCheck"
+                Content="Сохранить и продолжить"
+                FontWeight="Bold"
+                FontSize="14"
+                Margin="-40 5 0 5"
+                Width="200"
+                Height="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Grid.Column="2"
+                Grid.Row="3" Click="ToCheck_Click"></Button>
+
+            <Button x:Name="Return"
+                Content="Отмена"
+                FontWeight="Bold"
+                FontSize="14"
+                Margin="10 5"
+                Width="150"
+                Height="50"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Grid.Column="2"
+                Grid.Row="3"
+                Click="Return_Click"></Button>
+
+            <Button x:Name="ToClient"
+                Content="Назад"
+                FontWeight="Bold"
+                FontSize="14"
+                Margin="10 5"
+                Width="150"
+                Height="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Grid.Column="0"
+                Grid.Row="3" Click="ToClient_Click"></Button>
+        </Grid>
+    </ScrollViewer>
+</Page>

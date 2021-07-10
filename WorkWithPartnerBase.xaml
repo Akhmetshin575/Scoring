@@ -1,0 +1,341 @@
+﻿<Page x:Class="Scoring3.WorkWithPartnerBase"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Scoring3"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1536"
+      Title="WorkWithPartnerBase"
+      Background="White">
+
+    <Grid x:Name="container">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="170"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox
+            x:Name="searchStroke"
+            HorizontalAlignment="Stretch"
+            Foreground="Gray"
+            Grid.Row="0"
+            VerticalAlignment="Top"
+            FontSize="18"
+            Height="28" Margin="20"
+            TextWrapping="NoWrap"
+            Text="Поиск по наименованию юридического лица..."
+            HorizontalContentAlignment="Stretch"
+            GotFocus="searchStroke_GotFocus"
+            LostFocus="SearchStroke_LostFocus"
+            TextChanged="SearchStroke_TextChanged"/>
+        <Label
+            x:Name="labelName"
+            Content="Название:"
+            HorizontalAlignment="Left"
+            Margin="390,0,0,130.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxName"
+                 HorizontalAlignment="Stretch"
+                 Height="28"
+                 FontSize="18"
+                 Margin="500,0,19.6,130.4"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelInn"
+            Content="ИНН:"
+            HorizontalAlignment="Left" Margin="15,0,0,90.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxInn"
+                 HorizontalAlignment="left"
+                 Height="28"
+                 FontSize="18"
+                 Margin="100,0,0,90.4"
+                 Width="200"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelKpp"
+            Content="КПП:"
+            HorizontalAlignment="Left" Margin="15,0,0,50.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxKpp"
+            HorizontalAlignment="left"
+            Height="28"
+            FontSize="18"
+            Margin="100,0,0,50.4"
+            Width="200"
+            TextWrapping="Wrap"
+            VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelBic"
+            Content="БИК:"
+            HorizontalAlignment="Left" Margin="15,0,0,10.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxBic"
+            HorizontalAlignment="left"
+            Height="28"
+            FontSize="18"
+            Margin="100,0,0,10.4"
+            Width="200"
+            TextWrapping="Wrap"
+            VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelRs"
+            Content="Рас.счёт:"
+            HorizontalAlignment="Left" Margin="390,0,0,90.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxRs"
+            HorizontalAlignment="Stretch"
+            Height="28"
+            FontSize="18"
+            Margin="500,0,19.6,90.4"
+            TextWrapping="Wrap"
+            VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelBank"
+            Content="Банк:"
+            HorizontalAlignment="Left" Margin="390,0,0,50.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxBank"
+            HorizontalAlignment="Stretch"
+            Height="28"
+            FontSize="18"
+            Margin="500,0,19.6,50.4"
+            TextWrapping="Wrap"
+            VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelKs"
+            Content="Кор.счет:"
+            HorizontalAlignment="Left" Margin="390,0,0,10.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <TextBox x:Name="textBoxKs"
+            HorizontalAlignment="Stretch"
+            Height="28"
+            FontSize="18"
+            Margin="500,0,19.6,10.4"
+            TextWrapping="Wrap"
+            VerticalAlignment="Bottom"
+                 />
+        <Label
+            x:Name="labelType"
+            Content="Тип:"
+            HorizontalAlignment="Left" Margin="15,0,0,130.4"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+        <ComboBox
+            x:Name="comboBoxType"
+            HorizontalAlignment="Left"
+            Margin="100,0,0,130.4"
+            VerticalAlignment="Bottom"
+            Width="200"
+            FontSize="18"
+            Height="28"
+            Grid.Row="0"/>
+        <Grid x:Name="CitiesAndProducts"
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label
+            x:Name="labelCities"
+            Content="Доступен в городах:"
+            HorizontalAlignment="Left"
+            Margin="15,-8,0,145"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+            <ListBox
+            x:Name="listBoxCities"
+            HorizontalAlignment="Stretch"
+            Height="130"
+            Margin="20,20,10,10"
+            VerticalAlignment="Bottom"
+            Grid.Row="1"
+            SelectionMode="Extended"/>
+
+            <Label
+            x:Name="labelProducts"
+            Grid.Column="1"
+            Content="Предоставляемые продукты:"
+            HorizontalAlignment="Left"
+            Margin="5,-8,0,145"
+            VerticalAlignment="Bottom"
+            FontSize="18"
+            FontWeight="Bold"/>
+            <Label
+                x:Name="labelInsurances"
+                Grid.Column="1"
+                Content="Страховки:"
+                HorizontalAlignment="Left"
+                Margin="5,0,0,101.6"
+                VerticalAlignment="Bottom"
+                FontSize="18"
+                FontWeight="Bold"/>
+            <Label
+                x:Name="labelServices"
+                Grid.Column="1"
+                Content="Услуги:"
+                HorizontalAlignment="Left"
+                Margin="6,0,0,39.6"
+                VerticalAlignment="Bottom"
+                FontSize="18"
+                FontWeight="Bold"/>
+            <CheckBox x:Name="checkBoxKASKO" Content="КАСКО" Grid.Column="1" HorizontalAlignment="Left" Margin="120,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxGAP" Content="GAP" Grid.Column="1" HorizontalAlignment="Left" Margin="194,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxOSAGO" Content="ОСАГО" Grid.Column="1" HorizontalAlignment="Left" Margin="254,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxDSAGO" Content="ДСАГО" Grid.Column="1" HorizontalAlignment="Left" Margin="327,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxLife2" Content="СЖ (2 риска)" Grid.Column="1" HorizontalAlignment="Left" Margin="398,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxLife3" Content="СЖ (3 риска)" Grid.Column="1" HorizontalAlignment="Left" Margin="502,46,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxPersonalItems" Content="Защита личных вещей" Grid.Column="1" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxExtendedWarranty" Content="Продленная гарантия" Grid.Column="1" HorizontalAlignment="Left" Margin="170,72,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxCOVID" Content="Страхование от коронавируса" Grid.Column="1" HorizontalAlignment="Left" Margin="325,72,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxSMS" Content="SMS-информирование" Grid.Column="1" HorizontalAlignment="Left" Margin="96,108,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxAdvance" Content="Карта Адванс" Grid.Column="1" HorizontalAlignment="Left" Margin="418,108,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxRING" Content="Карта РИНГ" Grid.Column="1" HorizontalAlignment="Left" Margin="532,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.629,-1.132"/>
+            <CheckBox x:Name="checkBoxRAT" Content="Карта РАТ" Grid.Column="1" HorizontalAlignment="Left" Margin="10,133,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="checkBoxBankServices" Content="Пакет банковских услуг" Grid.Column="1" HorizontalAlignment="Left" Margin="254,108,0,0" VerticalAlignment="Top"/>
+        </Grid>
+
+        <Button
+            x:Name="button_Add"
+            Content="Добавить данные"
+            FontSize="18"
+            FontWeight="Bold"
+            Width="180"
+            Height="60"
+            HorizontalAlignment="Left"
+            Margin="20,0,0,0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            Click="Button_Add_Click"/>
+        <Button
+            x:Name="button_Replace"
+            Content="Изменить данные"
+            FontSize="18"
+            FontWeight="Bold"
+            Width="180"
+            Height="60"
+            HorizontalAlignment="Left"
+            Margin="270,0,0,0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            Click="Button_Replace_Click"/>
+        <Button
+            x:Name="button_Delete"
+            Content="Удалить данные"
+            FontSize="18"
+            FontWeight="Bold"
+            Width="180"
+            Height="60"
+            HorizontalAlignment="Right"
+            Margin="0,0,270,0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            Click="Button_Delete_Click"/>
+        <Button
+            x:Name="button_Cancel"
+            Content="Отмена"
+            FontSize="18"
+            FontWeight="Bold"
+            Width="180"
+            Height="60"
+            HorizontalAlignment="Right"
+            Margin="0,0,20,0"
+            Grid.Row="2"
+            VerticalAlignment="Center"
+            Click="Button_Cancel_Click"
+            IsCancel="True"/>
+        <Label
+            x:Name="labelWarning"
+            Grid.Row="2"
+            Content=""
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="Red"/>
+        
+        <ListView
+            x:Name="listViewPartnersShow"
+            HorizontalAlignment="Stretch"
+            Height="300" Margin="20,60,20,0"
+            VerticalAlignment="Top"
+            SelectionChanged="ListView_PartnersShow_SelectionChanged">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="BorderBrush" Value="Black" />
+                    <Setter Property="BorderThickness" Value="1, 0" />
+                    <Setter Property="Margin"  Value="0" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="400">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="Name" Click="listViewPartnersShowColumnHeader_Click" Content="Наименование"/>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="90">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding TypeOfCounterParty}" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="TypeOfCounterParty" Click="listViewPartnersShowColumnHeader_Click" Content="Тип"/>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="500">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Product}" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="Product" Click="listViewPartnersShowColumnHeader_Click" Content="Предоставляемые продукты"/>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="500">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Town}" TextAlignment="Center" TextWrapping="WrapWithOverflow"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                            <GridViewColumnHeader Tag="Town" Click="listViewPartnersShowColumnHeader_Click" Content="Доступен в городах"/>
+                        </GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>
