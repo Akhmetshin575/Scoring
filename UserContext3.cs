@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Scoring3
 {
-    class UserContext3 : DbContext
+    public class UserContext3 : DbContext
     {
         //наследуем конструктор базового класса. "DbConnection" - имя строки подключения к БД
         public UserContext3() : base("DbConnection3") { }

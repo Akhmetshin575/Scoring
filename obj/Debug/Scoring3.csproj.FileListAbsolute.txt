@@ -58,9 +58,9 @@ C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.del
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.addPartnerIdFieldToServiceAndInsurances.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.deleteICollectionPartnersFieldFromOrder.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.addTypePartnerNameDealerFieldToOrder.resources
-C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.csprojAssemblyReference.cache
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.deleteFieldTypeOfDocumentForCreditFromOrder.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.addFieldAcceptableAmountToOrder.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.addFieldRequiestAmountToOrder.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.addTwoFieldsToClient.resources
 C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.Migrations.add2FieldsToOrderClass.resources
+C:\Users\XtremeStation\Desktop\Diplom\Scoring3\obj\Debug\Scoring3.csproj.AssemblyReference.cache

@@ -124,7 +124,14 @@
             Height="100"
             Margin="20,0,20,20"
             VerticalAlignment="Bottom"
-            SelectionMode="Multiple"/>
+            SelectionMode="Multiple">
+            <ListBoxItem>Альметьевск</ListBoxItem>
+            <ListBoxItem>Елабуга</ListBoxItem>
+            <ListBoxItem>Набережные Челны</ListBoxItem>
+            <ListBoxItem>Нижнекамск</ListBoxItem>
+            <ListBoxItem>Казань</ListBoxItem>
+            <ListBoxItem>Чистополь</ListBoxItem>
+        </ListBox>
         <Button
             x:Name="button_Add"
             Content="Добавить данные"

@@ -32,7 +32,6 @@ namespace Scoring3
         {
             InitializeComponent();
             comboBox_Post.ItemsSource = References.post;
-            listBox_Cities.ItemsSource = References.citiesList;
             ListViewDraw();
         }
 
@@ -226,7 +225,8 @@ namespace Scoring3
             var temp = (Worker)listView_workersShow.SelectedItem;
             using(UserContext3 db = new UserContext3())
             {
-                if(temp != null)
+                CleanControlls(container);
+                if (temp != null)
                 {
                     Worker worker = db.Workers.Include(w => w.Cities).Where(w => w.WorkerId == temp.WorkerId).FirstOrDefault();
                     textBox_Surname.Text = worker.Surname;
@@ -238,12 +238,18 @@ namespace Scoring3
                     var cities = worker.Cities;
                     foreach (City city in cities)
                     {
-                        listBox_Cities.SelectedValue = city.Name;
+                        int index = -1;
+                        foreach (var n in listBox_Cities.Items)
+                        {
+                            if(city.Name == (n as ListBoxItem).Content.ToString())
+                            {
+                                index++;
+                            }
+                        }
+                        //int index = listBox_Cities.Items.IndexOf(city.Name);
+                        //int index = References.citiesList.FindIndex(c => c == city.Name);
+                        (listBox_Cities.Items[index] as ListBoxItem).IsSelected = true;
                     }
-                }
-                else
-                {
-                    CleanControlls(container);
                 }
             }
         }
